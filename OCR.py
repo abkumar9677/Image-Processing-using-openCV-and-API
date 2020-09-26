@@ -16,7 +16,7 @@ url_api = "https://api.ocr.space/parse/image"
 _, compressedimage = cv.imencode("screen.jpg",img,[1,90])
 file_bytes = io.BytesIO(compressedimage)
 result = requests.post(url_api, files={"screen.jpg": file_bytes}, data={
-                       "apikey": "109e19ff7488957"})
+                       "apikey": "*****************"})                  //u can search for free api key to replace it with *.
 result = result.content.decode()
 result = json.loads(result)
 text_detected = result.get("ParsedResults")[0].get("ParsedText")
